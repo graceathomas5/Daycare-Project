@@ -11,13 +11,61 @@
 </h1>
 
   <p>
-    Read the full article here:
-    <a href="Final%20daycare%20data%20draft.pdf">Final daycare data draft</a>
+    The borough accounted for more than a third of the city’s chronic violators
+    By: Grace Thomas
+
   </p>
 
 <iframe title="Bronx-based child care centers had the highest concentration of repeat violations" aria-label="Choropleth map" id="datawrapper-chart-5tHs4" src="https://datawrapper.dwcdn.net/5tHs4/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="806" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
 
+  Bronx child care centers have repeatedly shown up in inspection records, a pattern that reflects the pressure of operating in one of the city’s most economically strained boroughs.
+
+Bronx centers accounted for 35% of New York City’s repeat child care violators from 2020 through 2023, even though they made up just 13% of the centers in the dataset covering roughly 2,200 child care facilities citywide. 
+
+In this analysis, repeat violations mean the same problem was found at a child care center on different inspection days. That makes the pattern more than a one-time lapse and points to larger, systemic issues. The Bronx’s concentration also stands out because the borough is home to many of the city’s most persistent violators. Seven of the 10 centers with the highest number of repeat issues were in the Bronx. 
+
+“A lot of daycares, they’re understaffed, where they can’t have an eye on every little thing,” said Niasha Grant, a building principal at Beanstalk Academy. While her center is in Brooklyn, Beanstalk Academy also has two Bronx locations that ranked among the city’s top 10 repeat offenders. 
+
   <iframe title="The Bronx dominates NYC’s most persistent child care repeat violators" aria-label="Bar Chart" id="datawrapper-chart-Zbka2" src="https://datawrapper.dwcdn.net/Zbka2/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="231" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-  
+
+  Grant said she could not speak to the specifics of violations at those Bronx locations, but noted the amount of work that goes into running a child care center. Not only must she consider how to provide high-quality care for kids, but she must also conduct training for teachers and fill out paperwork for the city and state. “We’re just trying our best, trying to stay on top of all the things that we need to do.”
+
+Her comments reflect the day-to-day realities behind many recurring violations. Staff shortages, turnover, and thin administrative support can make it difficult to keep up with routine checks, administrative work, and maintenance.
+
+That also helps explain why many recurring violations in the dataset were not critical failures. General violations, tied to paperwork and administrative compliance, made up 62% of total recurring violations. Officials from the state Office of Children and Family Services declined to comment on any analysis of the inspection data. 
+
+“Common violations are things like background checks and tuberculosis tests,” said Jessica Brown, an assistant professor at the University of South Carolina who studies the childcare market. “If a provider does not have the administrative support to keep track of that kind of thing, I could see how there could be many repeat violations.”
+
+But the Bronx data was not just about paperwork. The most repeated violation in the dataset appeared at a Bronx center, where inspectors noted that the facility was not maintained properly, considered a critical error. At two Bronx-based Beanstalk Academy locations, inspectors repeatedly noted issues with sinks, like that there was not enough running water or that water temperature exceeded 115 degrees Fahrenheit, also considered critical.
+
+This shows how both administrative and more serious problems can exist in the same system. In the Bronx, the repeated violations point not just to missed forms or incomplete records, but to centers struggling to keep pace with the basic demands of operation. That challenge is likely sharper in a borough where child care providers are operating amid some of the city’s lowest household incomes, which can affect staffing, maintenance budgets, and administrative capacity.
+
+Yolanda Whyte, a pediatrician and environmental health consultant, said the conditions at a child care center can shape children in ways that go beyond any single inspection. “Your social conditions can actually affect your health outcomes,” she said, adding that repeat inspections that occur after a center is initially found to be violating code have negative impact. “Even that disruption and the distress that’s associated with violations 
+
+  can also affect children.” In practice, that means centers in lower-income areas may be serving families and employing staff who are already dealing with more instability, making it harder to sustain the routines that help avoid repeated violations.
+
+The closure data adds another layer. Two of the three highest repeat violators from 2020 to 2023 were in the Bronx. Both eventually shut down: one after a fire, and the other because of funding problems. Those closures may not be directly tied to repeated inspection issues, but they fit the broader picture of instability that can surround centers with many compliance problems. 
+
+For now, parents can protect their children by using the city’s child care map. It lists individual child care centers and their violation histories from 2023 onward, so families can check whether a provider has a pattern of recurring problems before enrolling a child.
+
+
+
+  Methodology: 
+- I used https://data.cityofnewyork.us/Health/DOHMH-Childcare-Center-Inspections-Historical-/dsg6-ifza/data_preview to determine where repeat violators were concentrated in NYC. Analysis included the following:
+- Some providers had duplicate violations:
+One center may have the same address and phone number, but serve different populations (ex. Ages 0-2, 2-5). 
+This would result in repeat violations for the same center unnecessarily. This was deduplicated.
+Or one center may have inconsistent formats for each instance that it appeared in the data (ex. Center A inc. vs Center A incorporated). 
+This would result in repeat violations for the same center unnecessarily. This was deduplicated.
+I did not include centers that served populations over the age of 5 as this analysis focused on child care only.
+There are instances of duplicate violations on the same day. For example, a center that had 5 staff members who did not have proper background checks was considered 5 violations. I considered this as 1 violation, and an instance of the same issue on a different day would be considered a repeat violation.
+- I created unique ID’s based on a center’s name, address, and phone number
+- I created a recurrence score, which is the number of times any violations were repeated. This was used to determine the analysis for the “recurring violators” bar graph. 
+- I also analyzed how many repeated violation types and total violation types there were. As well as a breakdown of recurring violations by category (general, critical, public health). This analysis was not reflected in the final version
+- I also created a column in Python for the maximum number of times each repeat violation occurred. 
+- This data reflects child care centers in NYC from 2020-2023, the last time the data was published on Open Data. It does not include home-based child care, which makes up approximately 7,000 providers. 
+- Each home-based provider can serve up to 12 students, while the maximum capacity in the data listed for child care centers, as analyzed, was 426 children. Home-based data is not publicly available.
+- The map includes zipcodes where data was available for 5+ centers as not to skew the visualization where limited data was provided.
+
 </body>
 </html>
